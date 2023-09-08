@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "test",
-    "build":"npx gulp build"
+    "build": "cross-env NODE_ENV=production npx gulp",
+    "dev": "npx gulp"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,8 @@
   },
   "homepage": "https://github.com/methodofaction/Method-Draw#readme",
   "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "cross-env": "^7.0.3",
     "gulp": "^4.0.2",
     "gulp-cache-bust": "^1.4.1",
     "gulp-concat": "^2.6.1",
