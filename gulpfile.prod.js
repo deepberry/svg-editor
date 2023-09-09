@@ -61,6 +61,11 @@ gulp.task('canvg', function(){
     .pipe(gulp.dest('dist/js/lib'));
 });
 
+gulp.task('i18n', function(){
+  return gulp.src(['src/locales/**/*'])
+    .pipe(gulp.dest('dist/locales'));
+});
+
 gulp.task('build', 
   gulp.series(
       'css', 
@@ -70,6 +75,7 @@ gulp.task('build',
       'images',
       'extensions',
       'shapelib',
-      'canvg'
+      'canvg',
+      'i18n',
   )
 );

@@ -62,6 +62,11 @@ gulp.task('canvg', function () {
         .pipe(gulp.dest('dist/js/lib'));
 });
 
+gulp.task('i18n', function(){
+    return gulp.src(['src/locales/**/*'])
+        .pipe(gulp.dest('dist/locales'));
+});
+
 gulp.task('dev',
     gulp.series(
         'css',
@@ -71,7 +76,8 @@ gulp.task('dev',
         'images',
         'extensions',
         'shapelib',
-        'canvg'
+        'canvg',
+        'i18n'
     )
 );
 
@@ -94,6 +100,7 @@ gulp.task('watch', function () {
     gulp.watch('src/extensions/**/*', gulp.series('extensions'));
     gulp.watch('src/shapelib/**/*', gulp.series('shapelib'));
     gulp.watch(['src/js/lib/canvg.js', 'src/js/lib/rgbcolor.js'], gulp.series('canvg'));
+    gulp.watch('src/locales/**/*', gulp.series('i18n'));
 
     gulp.watch('dist/**/*').on('change', browserSync.reload);
 });
