@@ -11,7 +11,7 @@ i18next.use(i18nextXHRBackend).init({
     useOptionsAttr: false, // see optionsAttr
     parseDefaultValueFromContent: true, // parses default values from content ele.val or ele.text
     backend: {
-        loadPath: '../locales/{{lng}}.json',
+        loadPath: './locales/{{lng}}.json',
     }
 }, function () {
     console.log("i18n init successfully");
