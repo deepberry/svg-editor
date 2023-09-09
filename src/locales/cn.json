@@ -162,7 +162,7 @@
             "name": "视图",
             "view_rulers": "标尺",
             "view_wireframe": "线框",
-            "source": "源代码"
+            "source": "源代码<span class='shortcut'>⌘U</span>"
         }
     },
 
