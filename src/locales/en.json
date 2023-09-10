@@ -176,5 +176,46 @@
         "path_tool": "Path Tool",
         "text_tool": "Text Tool",
         "zoom_tool": "Zoom Tool"
+    },
+
+    "modal": {
+        "source": {
+            "cancel": "Cancel",
+            "apply_change": "Apply Changes",
+            "parse_error": "There were parsing errors in your SVG source.\nRevert back to original SVG source?"
+        },
+        "configure": {
+            "name": "Configuration",
+            "erase_all_data": "Erase All Data"
+        },
+        "shortcuts": {
+            "name": "Shortcuts",
+            "save_svg_file": "Save SVG File",
+            "select_all": "Select All",
+            "set_bold_text": "Set bold text",
+            "set_italic_text": "Set italic text",
+            "group_selected": "Group selected",
+            "ungroup": "Ungroup",
+            "delete": "Delete",
+            "rotate-1deg": "Rotate -1deg",
+            "rotate1deg": "Rotate +1deg",
+            "rotate-5deg": "Rotate -5deg",
+            "rotate5deg": "Rotate +5deg",
+            "next_item": "Next item",
+            "previous_item": "Prev item",
+            "show_hide_rulers": "Show/Hide rulers",
+            "zoom_in": "Zoom in",
+            "zoom_out": "Zoom out",
+            "actual_size": "Actual size",
+            "nudge_up": "Nudge up",
+            "nudge_down": "Nudge down",
+            "nudge_left": "Nudge left",
+            "nudge_right": "Nudge right",
+            "jump_left": "Jump left",
+            "jump_right": "Jump right",
+            "jump_up": "Jump up",
+            "jump_down": "Jump down",
+            "pan_canvas": "Pan canvas"
+        }
     }
 }

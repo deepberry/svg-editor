@@ -162,7 +162,7 @@
             "name": "视图",
             "view_rulers": "标尺",
             "view_wireframe": "线框",
-            "source": "源代码<span class='shortcut'>⌘U</span>"
+            "source": "源代码"
         }
     },
 
@@ -179,6 +179,43 @@
     },
 
     "modal": {
-        "source": {}
+        "source": {
+            "cancel": "取消",
+            "apply_change": "应用更改",
+            "parse_error": "SVG源代码解析错误，是否恢复原始SVG源代码？"
+        },
+        "configure": {
+            "name": "配置",
+            "erase_all_data": "清除所有数据"
+        },
+        "shortcuts": {
+            "name": "快捷键",
+            "save_svg_file": "保存文件",
+            "select_all": "全选",
+            "set_bold_text": "设置粗体",
+            "set_italic_text": "设置斜体",
+            "group_selected": "组合选择",
+            "ungroup": "取消组合",
+            "delete": "删除",
+            "rotate-1deg": "旋转-1度",
+            "rotate1deg": "旋转1度",
+            "rotate-5deg": "旋转-5度",
+            "rotate5deg": "旋转5度",
+            "next_item": "下一个",
+            "previous_item": "上一个",
+            "show_hide_rulers": "显示/隐藏标尺",
+            "zoom_in": "放大",
+            "zoom_out": "缩小",
+            "actual_size": "实际大小",
+            "nudge_up": "上移",
+            "nudge_down": "下移",
+            "nudge_left": "左移",
+            "nudge_right": "右移",
+            "jump_left": "跳转到左边",
+            "jump_right": "跳转到右边",
+            "jump_up": "跳转到顶部",
+            "jump_down": "跳转到底部",
+            "pan_canvas": "画布平移"
+        }
     }
 }
