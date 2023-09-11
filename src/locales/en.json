@@ -217,5 +217,12 @@
             "jump_down": "Jump down",
             "pan_canvas": "Pan canvas"
         }
+    },
+
+    "state": {
+        "clear_alert": "Clears all editor configuration and canvas, are you sure?"
+    },
+    "editor": {
+        "clear_drawing_alert": "Do you want to clear the drawing?"
     }
 }

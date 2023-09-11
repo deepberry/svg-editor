@@ -217,5 +217,12 @@
             "jump_down": "跳转到底部",
             "pan_canvas": "画布平移"
         }
+    },
+
+    "state": {
+        "clear_alert": "确认清除所有数据？"
+    },
+    "editor": {
+        "clear_drawing_alert": "确认清除所有数据？"
     }
 }

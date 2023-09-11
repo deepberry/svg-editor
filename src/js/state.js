@@ -36,7 +36,7 @@ function State(){
 
   this.clean = (warn = true) => {
     if (warn) {
-      const confirmed = confirm("Clears all editor configuration and canvas, are you sure?");
+      const confirmed = confirm(i18next.t("state.clear_alert"));
       if (!confirmed) return;
     }
 
