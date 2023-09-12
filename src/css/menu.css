@@ -71,6 +71,7 @@
   padding: var(--x1) var(--x16) var(--x1) var(--x6);
   cursor: pointer;
   color: var(--z3);
+  /* height: var(--x6); */
 }
 
 .menu_list input[type=file] {
@@ -125,7 +126,7 @@
   margin: 0;
 }
 
-.menu_list .menu_item span {
+.menu_list .menu_item .shortcut {
   display: block;
   position: absolute;
   right: var(--x2);
@@ -140,7 +141,7 @@
   font-weight: 600;
 }
 
-.menu_list .menu_item:not(.disabled):hover span {
+.menu_list .menu_item:not(.disabled):hover .shortcut {
   background: var(--accent13);
 }
 
@@ -150,6 +151,12 @@
 
 .menu-right {
   margin-left: auto;
+}
+
+.language-icon {
+  padding-left: 0;
+  position: relative;
+  top: -2px;
 }
 
 .menu-right button {

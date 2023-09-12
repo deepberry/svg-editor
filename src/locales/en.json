@@ -1,0 +1,228 @@
+{
+    "panel": {
+        "canvas": {
+            "name": "Canvas",
+            "title": "Title",
+            "width": "Width",
+            "height": "Height",
+            "color": "Color",
+            "sizes": "Sizes"
+        },
+
+        "rectangle": {
+            "name": "Rectangle",
+            "x": "X",
+            "y": "Y",
+            "width": "Width",
+            "height": "Height"
+        },
+
+        "path": {
+            "name": "Path",
+            "x": "X",
+            "y": "Y"
+        },
+
+        "image": {
+            "name": "Image",
+            "x": "X",
+            "y": "Y",
+            "width": "Width",
+            "height": "Height"
+        },
+
+        "circle": {
+            "name": "Circle",
+            "center_x": "Center X",
+            "center_y": "Center Y",
+            "radius": "Radius"
+        },
+
+        "ellipse": {
+            "name": "Ellipse",
+            "x": "X",
+            "y": "Y",
+            "radius_x": "Radius X",
+            "radius_y": "Radius Y"
+        },
+
+        "line": {
+            "name": "Line",
+            "start_x": "Start X",
+            "start_y": "Start Y",
+            "end_x": "End X",
+            "end_y": "End Y"
+        },
+
+        "text": {
+            "name": "Text",
+            "content": "Content",
+            "x": "X",
+            "y": "Y",
+            "font": "Font",
+            "font_style": "Font Style",
+            "font_size": "Font Size"
+        },
+
+        "group": {
+            "name": "Group",
+            "x": "X",
+            "y": "Y",
+            "ungroup": "Ungroup"
+        },
+
+        "path_node": {
+            "edit_path": "Edit Path",
+            "x": "X",
+            "y": "Y",
+            "seg_type": "Segment Type",
+            "straight": "Straight",
+            "curve": "Curve",
+            "add_node": "Add Node",
+            "delete_node": "Delete Node",
+            "open_close_path": "Open/Close Path"
+        },
+
+        "selected": {
+            "rotation": "Rotation",
+            "opacity": "Opacity",
+            "blur": "Blur",
+            "roundness": "Roundness"
+        },
+
+        "align": {
+            "align_to_canvas": "Align to Canvas"
+        },
+
+        "multiselected": {
+            "name": "Multi-select",
+            "align_to_objects": "Align to Objects",
+            "align_to_page": "Align to Page",
+            "group_elements": "Group Elements",
+            "place_text_on_path": "Place Text on Path"
+        },
+
+        "stroke": {
+            "name": "Stroke",
+            "width": "Stroke Width",
+            "dash": "Stroke Dash"
+        }
+    },
+
+    "cmenu": {
+        "cut": "Cut",
+        "copy": "Copy",
+        "paste": "Paste",
+        "delete": "Delete",
+        "group": "Group",
+        "ungroup": "Ungroup",
+        "bring_to_front": "Bring to Front",
+        "bring_forward": "Bring Forward",
+        "send_backward": "Send Backward",
+        "send_to_back": "Send to Back"
+    },
+
+    "menu": {
+        "key_shortcuts": "Key Shortcuts",
+        "configure": "Configure",
+
+        "file": {
+            "name": "File",
+            "new_document": "New Document",
+            "open_svg": "Open SVG",
+            "place_image": "Place Image",
+            "save_image": "Save Image",
+            "export_as_png": "Export as PNG"
+        },
+
+        "edit": {
+            "name": "Edit",
+            "undo": "Undo",
+            "redo": "Redo",
+            "cut": "Cut",
+            "copy": "Copy",
+            "paste": "Paste",
+            "duplicate": "Duplicate",
+            "delete": "Delete"
+        },
+
+        "object": {
+            "name": "Object",
+            "bring_to_front": "Bring to Front",
+            "bring_forward": "Bring Forward",
+            "send_backward": "Send Backward",
+            "send_to_back": "Send to Back",
+            "group_elements": "Group Elements",
+            "ungroup_elements": "Ungroup Elements",
+            "convert_to_path": "Convert to Path",
+            "reorient_path": "Reorient Path"
+        },
+
+        "view": {
+            "name": "View",
+            "view_rulers": "View Rulers",
+            "view_wireframe": "View Wireframe",
+            "source": "Source Code"
+        }
+    },
+
+    "tools": {
+        "select_tool": "Select Tool",
+        "pencil_tool": "Pencil Tool",
+        "line_tool": "Line Tool",
+        "rectangle_tool": "Rectangle Tool",
+        "ellipse_tool": "Ellipse Tool",
+        "shape_tool": "Shape Tool",
+        "path_tool": "Path Tool",
+        "text_tool": "Text Tool",
+        "zoom_tool": "Zoom Tool"
+    },
+
+    "modal": {
+        "source": {
+            "cancel": "Cancel",
+            "apply_change": "Apply Changes",
+            "parse_error": "There were parsing errors in your SVG source.\nRevert back to original SVG source?"
+        },
+        "configure": {
+            "name": "Configuration",
+            "erase_all_data": "Erase All Data"
+        },
+        "shortcuts": {
+            "name": "Shortcuts",
+            "save_svg_file": "Save SVG File",
+            "select_all": "Select All",
+            "set_bold_text": "Set bold text",
+            "set_italic_text": "Set italic text",
+            "group_selected": "Group selected",
+            "ungroup": "Ungroup",
+            "delete": "Delete",
+            "rotate-1deg": "Rotate -1deg",
+            "rotate1deg": "Rotate +1deg",
+            "rotate-5deg": "Rotate -5deg",
+            "rotate5deg": "Rotate +5deg",
+            "next_item": "Next item",
+            "previous_item": "Prev item",
+            "show_hide_rulers": "Show/Hide rulers",
+            "zoom_in": "Zoom in",
+            "zoom_out": "Zoom out",
+            "actual_size": "Actual size",
+            "nudge_up": "Nudge up",
+            "nudge_down": "Nudge down",
+            "nudge_left": "Nudge left",
+            "nudge_right": "Nudge right",
+            "jump_left": "Jump left",
+            "jump_right": "Jump right",
+            "jump_up": "Jump up",
+            "jump_down": "Jump down",
+            "pan_canvas": "Pan canvas"
+        }
+    },
+
+    "state": {
+        "clear_alert": "Clears all editor configuration and canvas, are you sure?"
+    },
+    "editor": {
+        "clear_drawing_alert": "Do you want to clear the drawing?"
+    }
+}

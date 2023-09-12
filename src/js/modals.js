@@ -20,8 +20,8 @@ editor.modal = {
             <textarea id="svg_source_textarea" spellcheck="false"></textarea>
           </form>
           <div id="tool_source_back" class="toolbar_button">
-            <button id="tool_source_cancel" class="cancel">Cancel</button>
-            <button id="tool_source_save" class="ok">Apply Changes</button>
+            <button id="tool_source_cancel" class="cancel" data-i18n="modal.source.cancel">Cancel</button>
+            <button id="tool_source_save" class="ok" data-i18n="modal.source.apply_change">Apply Changes</button>
           </div>
         </div>
     </div>`,
@@ -54,9 +54,9 @@ editor.modal = {
   }),
   configure: new MD.Modal({
     html: `
-      <h1>Configuration</h1>
+      <h1 data-i18n="modal.configure.name" style="text-align:center">Configuration</h1>
       <div id="configuration">
-        <button class="warning">Erase all data</button>
+        <button class="warning" data-i18n="modal.configure.erase_all_data">Erase all data</button>
         </div>
       </div>`,
     js: function(el){
@@ -76,7 +76,7 @@ editor.modal = {
   }),
   shortcuts: new MD.Modal({
     html: `
-      <h1>Shortcuts</h1>
+      <h1 data-i18n="modal.shortcuts.name">Shortcuts</h1>
       <div id="shortcuts"></div>`,
     js: function(el){
       el.children[0].classList.add("modal-item-wide");

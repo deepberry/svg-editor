@@ -1,0 +1,228 @@
+{
+    "panel": {
+        "canvas": {
+            "name": "画布",
+            "title": "标题",
+            "width": "宽度",
+            "height": "长度",
+            "color": "颜色",
+            "sizes": "尺寸"
+        },
+
+        "rectangle": {
+            "name": "矩形",
+            "x": "X",
+            "y": "Y",
+            "width": "宽度",
+            "height": "长度"
+        },
+
+        "path": {
+            "name": "路径",
+            "x": "X",
+            "y": "Y"
+        },
+
+        "image": {
+            "name": "图片",
+            "x": "X",
+            "y": "Y",
+            "width": "宽度",
+            "height": "长度"
+        },
+
+        "circle": {
+            "name": "圆形",
+            "center_x": "中心X",
+            "center_y": "中心Y",
+            "radius": "半径"
+        },
+
+        "ellipse": {
+            "name": "椭圆",
+            "x": "X",
+            "y": "Y",
+            "radius_x": "半径X",
+            "radius_y": "半径Y"
+        },
+
+        "line": {
+            "name": "线条",
+            "start_x": "起始X",
+            "start_y": "起始Y",
+            "end_x": "结束X",
+            "end_y": "结束Y"
+        },
+
+        "text": {
+            "name": "文本",
+            "content": "内容",
+            "x": "X",
+            "y": "Y",
+            "font": "字体",
+            "font_style": "字体样式",
+            "font_size": "字体大小"
+        },
+
+        "group": {
+            "name": "组合",
+            "x": "X",
+            "y": "Y",
+            "ungroup": "取消组合"
+        },
+
+        "path_node": {
+            "edit_path": "编辑路径",
+            "x": "X",
+            "y": "Y",
+            "seg_type": "路径类型",
+            "straight": "直线",
+            "curve": "曲线",
+            "add_node": "添加节点",
+            "delete_node": "删除节点",
+            "open_close_path": "断开/闭合路径"
+        },
+
+        "selected": {
+            "rotation": "旋转",
+            "opacity": "透明度",
+            "blur": "模糊",
+            "roundness": "圆角"
+        },
+
+        "align": {
+            "align_to_canvas": "对齐方式"
+        },
+
+        "multiselected": {
+            "name": "多选",
+            "align_to_objects": "相对对象对齐",
+            "align_to_page": "相对画布对齐",
+            "group_elements": "组合",
+            "place_text_on_path": "沿路径排列文本"
+        },
+
+        "stroke": {
+            "name": "描边",
+            "width": "描边宽度",
+            "dash": "描边虚线"
+        }
+    },
+
+    "cmenu": {
+        "cut": "剪切",
+        "copy": "复制",
+        "paste": "粘贴",
+        "delete": "删除",
+        "group": "组合",
+        "ungroup": "取消组合",
+        "bring_to_front": "置于顶层",
+        "bring_forward": "置于上层",
+        "send_backward": "置于下层",
+        "send_to_back": "置于底层"
+    },
+
+    "menu": {
+        "key_shortcuts": "快捷键",
+        "configure": "配置",
+
+        "file": {
+            "name": "文件",
+            "new_document": "新建",
+            "open_svg": "打开SVG",
+            "place_image": "插入图片",
+            "save_image": "保存图片",
+            "export_as_png": "导出为PNG"
+        },
+
+        "edit": {
+            "name": "编辑",
+            "undo": "撤销",
+            "redo": "重做",
+            "cut": "剪切",
+            "copy": "复制",
+            "paste": "粘贴",
+            "duplicate": "重复",
+            "delete": "删除"
+        },
+
+        "object": {
+            "name": "对象",
+            "bring_to_front": "置于顶层",
+            "bring_forward": "置于上层",
+            "send_backward": "置于下层",
+            "send_to_back": "置于底层",
+            "group_elements": "组合",
+            "ungroup_elements": "取消组合",
+            "conert_to_path": "转换为路径",
+            "reorient_path": "路径重定向"
+        },
+
+        "view": {
+            "name": "视图",
+            "view_rulers": "标尺",
+            "view_wireframe": "线框",
+            "source": "源代码"
+        }
+    },
+
+    "tools": {
+        "select_tool": "选择工具",
+        "pencil_tool": "铅笔工具",
+        "line_tool": "线条工具",
+        "rectangle_tool": "矩形工具",
+        "ellipse_tool": "椭圆工具",
+        "shape_tool": "形状工具",
+        "path_tool": "路径工具",
+        "text_tool": "文本工具",
+        "zoom_tool": "缩放工具"
+    },
+
+    "modal": {
+        "source": {
+            "cancel": "取消",
+            "apply_change": "应用更改",
+            "parse_error": "SVG源代码解析错误，是否恢复原始SVG源代码？"
+        },
+        "configure": {
+            "name": "配置",
+            "erase_all_data": "清除所有数据"
+        },
+        "shortcuts": {
+            "name": "快捷键",
+            "save_svg_file": "保存文件",
+            "select_all": "全选",
+            "set_bold_text": "设置粗体",
+            "set_italic_text": "设置斜体",
+            "group_selected": "组合选择",
+            "ungroup": "取消组合",
+            "delete": "删除",
+            "rotate-1deg": "旋转-1度",
+            "rotate1deg": "旋转1度",
+            "rotate-5deg": "旋转-5度",
+            "rotate5deg": "旋转5度",
+            "next_item": "下一个",
+            "previous_item": "上一个",
+            "show_hide_rulers": "显示/隐藏标尺",
+            "zoom_in": "放大",
+            "zoom_out": "缩小",
+            "actual_size": "实际大小",
+            "nudge_up": "上移",
+            "nudge_down": "下移",
+            "nudge_left": "左移",
+            "nudge_right": "右移",
+            "jump_left": "跳转到左边",
+            "jump_right": "跳转到右边",
+            "jump_up": "跳转到顶部",
+            "jump_down": "跳转到底部",
+            "pan_canvas": "画布平移"
+        }
+    },
+
+    "state": {
+        "clear_alert": "确认清除所有数据？"
+    },
+    "editor": {
+        "clear_drawing_alert": "确认清除所有数据？"
+    }
+}
