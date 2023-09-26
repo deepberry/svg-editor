@@ -6,6 +6,7 @@ MD.Shapelib = function(){
   var svgroot = canv.getRootElem();
   var lastBBox = {};
 
+  // 关闭dialog
   $(document).on("mousedown", function(e){
     if (!e.target.closest("#tools_shapelib"))
       $("#tools_shapelib").hide();
@@ -14,17 +15,18 @@ MD.Shapelib = function(){
   // This populates the category list
   var categories = {
     basic: 'Basic',
-    object: 'Objects',
-    symbol: 'Symbols',
-    arrow: 'Arrows',
-    flowchart: 'Flowchart',
-    nature: 'Nature',
-    game: 'Cards & Chess',
-    dialog_balloon: 'Dialog baloons',
-    music: 'Music',
-    weather: 'Weather &amp; Time',
-    ui: 'User Interface',
-    social: 'Social Web'
+    common: "Common",
+    // object: 'Objects',
+    // symbol: 'Symbols',
+    // arrow: 'Arrows',
+    // flowchart: 'Flowchart',
+    // nature: 'Nature',
+    // game: 'Cards & Chess',
+    // dialog_balloon: 'Dialog baloons',
+    // music: 'Music',
+    // weather: 'Weather &amp; Time',
+    // ui: 'User Interface',
+    // social: 'Social Web'
   };
   
   var library = {
@@ -71,6 +73,7 @@ MD.Shapelib = function(){
     $('#shape_buttons').append(cur_lib.buttons);
   }
   
+  // 加载图形库
   function loadLibrary(cat_id) {
   
     var lib = library[cat_id];
@@ -93,7 +96,7 @@ MD.Shapelib = function(){
     if(!lib.buttons.length) makeButtons(cat_id, lib);
     loadIcons();
   }
-  
+  // 生成图形库按钮
   function makeButtons(cat, shapes) {
     var size = cur_lib.size || 300;
     var fill = cur_lib.fill || false;
@@ -166,7 +169,7 @@ MD.Shapelib = function(){
       var cat_str = '';
       
       $.each(categories, function(id, label) {
-        cat_str += '<div data-cat=' + id + '>' + label + '</div>';
+        cat_str += `<div data-cat='${id}' data-i18n='shape.${id}'></div>`;
       });
       shape_cats.html(cat_str)
       $("[data-cat]", shape_cats)
@@ -195,6 +198,7 @@ MD.Shapelib = function(){
       var x = start_x = opts.start_x;
       var y = start_y = opts.start_y;
       var cur_style = canv.getStyle();
+      // 绘制svg
       cur_shape = canv.addSvgElementFromJson({
         "element": "path",
         "curStyles": true,

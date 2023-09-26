@@ -224,5 +224,10 @@
     },
     "editor": {
         "clear_drawing_alert": "确认清除所有数据？"
+    },
+
+    "shape": {
+        "common": "常用地形",
+        "basic": "基本形状"
     }
 }

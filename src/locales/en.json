@@ -224,5 +224,10 @@
     },
     "editor": {
         "clear_drawing_alert": "Do you want to clear the drawing?"
+    },
+
+    "shape": {
+        "common": "Common",
+        "basic": "Basic"
     }
 }
