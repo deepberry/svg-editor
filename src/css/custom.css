@@ -1,6 +1,7 @@
 .m-rect-dialog label {
     display: block;
     margin-bottom: 5px;
+    font-size: 15px;
 }
 
 .m-rect-dialog .u-input {
@@ -12,8 +13,18 @@
     line-height: 140%;
     font-family: var(--mono-font);
     font-size: 14px;
+    padding:5px 10px;
+}
+.m-rect-dialog__content{
+    margin-bottom:5px;
 }
 
 .m-rect-dialog .tool_horizontal_rect {
     margin-top: 10px;
+}
+
+.toolbar_button{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }

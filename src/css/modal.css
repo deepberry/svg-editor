@@ -24,7 +24,7 @@
   background-color: white;
   position: relative;
   border-radius: var(--x1);
-  padding: var(--x12);
+  padding: 20px;
   max-width: 600px;
   margin: 32px;
 }
