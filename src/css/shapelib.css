@@ -33,9 +33,9 @@
   border-radius: var(--x1) 0 0 0;
 }
 
-#shape_cats > div:last-child {
+/* #shape_cats > div:last-child {
   border-radius: 0 0 0 var(--x1);
-}
+} */
 
 #shape_cats div:hover {
   color: var(--z0);

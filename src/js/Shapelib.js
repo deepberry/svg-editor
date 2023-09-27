@@ -26,7 +26,8 @@ MD.Shapelib = function(){
     // music: 'Music',
     // weather: 'Weather &amp; Time',
     // ui: 'User Interface',
-    // social: 'Social Web'
+    // social: 'Social Web',
+    devices: "Devices",
   };
   
   var library = {
@@ -116,7 +117,7 @@ MD.Shapelib = function(){
     var stroke = fill ? 0: (size/30);
     
     var shape_icon = new DOMParser().parseFromString(
-      '<svg xmlns="http://www.w3.org/2000/svg"><svg viewBox="' + vb + '"><path /><\/svg><\/svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="' + vb + '"><path /><\/svg>',
       'text/xml');
 
     var width = 40;
@@ -137,7 +138,8 @@ MD.Shapelib = function(){
       var icon_btn = icon.wrap('<div class="tool_button">').parent().attr({
         id: mode_id + '_' + id,
         title: id,
-        'data-action': cur_lib.fnKeys[id] || null
+        'data-action': cur_lib.fnKeys && cur_lib.fnKeys[id] || null,
+        fill: "#043d75"
       });
       
       // Store for later use

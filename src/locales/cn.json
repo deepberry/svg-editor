@@ -231,7 +231,8 @@
     },
 
     "shape": {
-        "common": "常用地形",
-        "basic": "基本形状"
+        "common": "地形",
+        "basic": "形状",
+        "devices": "设备"
     }
 }

@@ -232,6 +232,7 @@
 
     "shape": {
         "common": "Common",
-        "basic": "Basic"
+        "basic": "Basic",
+        "devices": "Devices"
     }
 }
