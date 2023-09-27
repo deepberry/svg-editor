@@ -14,7 +14,7 @@ MD.Shapelib = function(){
   
   // This populates the category list
   var categories = {
-    basic: 'Basic',
+    // basic: 'Basic',
     common: "Common",
     // object: 'Objects',
     // symbol: 'Symbols',
@@ -58,11 +58,18 @@ MD.Shapelib = function(){
         "times": "m1.00089,73.36786l72.36697,-72.36697l76.87431,76.87368l76.87431,-76.87368l72.36765,72.36697l-76.87433,76.87431l76.87433,76.87431l-72.36765,72.36765l-76.87431,-76.87433l-76.87431,76.87433l-72.36697,-72.36765l76.87368,-76.87431l-76.87368,-76.87431z"
       },
       buttons: []
+    },
+    'common': {
+      data: {
+        "horizontal_rect": "m1,1l49.66667,0l0,0l74.5,0l173.83334,0l0,115.8889l0,0l0,49.66666l0,33.11111l-173.83334,0l-123.68433,97.37498l49.18433,-97.37498l-49.66667,0l0,-33.11111l0,-49.66666l0,0z"
+      },
+      buttons: [],
+
     }
   };
   
-  var cur_lib = library.basic;
-  current_d = cur_lib.data.star_points_5
+  var cur_lib = library.common;
+  current_d = cur_lib.data.horizontal_rect;
 
   var mode_id = 'shapelib';
   
@@ -125,7 +132,8 @@ MD.Shapelib = function(){
       
       var icon_btn = icon.wrap('<div class="tool_button">').parent().attr({
         id: mode_id + '_' + id,
-        title: id
+        title: id,
+        'data-action': "horizontal_rect"
       });
       
       // Store for later use
@@ -142,7 +150,7 @@ MD.Shapelib = function(){
       
       var shower = $('#tool_shapelib');
 
-      loadLibrary('basic');
+      loadLibrary('common');
       
       // Do mouseup on parent element rather than each button
       $('#shape_buttons').mouseup(function(evt) {
@@ -160,6 +168,11 @@ MD.Shapelib = function(){
         
         cur_shape_id = btn[0].id.substr((mode_id+'_').length);
         current_d = cur_lib.data[cur_shape_id];
+
+        const action = btn[0].getAttribute("data-action");
+        if (action && editor[action]) {
+          editor[action]();
+        }
         
         $('.tools_flyout').fadeOut();
 

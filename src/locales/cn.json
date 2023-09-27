@@ -216,6 +216,10 @@
             "jump_up": "跳转到顶部",
             "jump_down": "跳转到底部",
             "pan_canvas": "画布平移"
+        },
+        "horizontal_rect": {
+            "name": "输入行数",
+            "confirm": "确认"
         }
     },
 

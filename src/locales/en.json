@@ -216,6 +216,10 @@
             "jump_up": "Jump up",
             "jump_down": "Jump down",
             "pan_canvas": "Pan canvas"
+        },
+        "horizontal_rect": {
+            "name": "Type the number of rows",
+            "confirm": "Confirm"
         }
     },
 

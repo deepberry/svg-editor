@@ -25,10 +25,10 @@ editor.modal = {
           </div>
         </div>
     </div>`,
-    js: function(el){
+    js: function (el) {
       el.children[0].classList.add("modal-item-source");
-      el.querySelector("#tool_source_save").addEventListener("click", function(){
-        var saveChanges = function() {
+      el.querySelector("#tool_source_save").addEventListener("click", function () {
+        var saveChanges = function () {
           svgCanvas.clearSelection();
           $('#svg_source_textarea').blur();
           editor.zoom.multiply(1);
@@ -39,15 +39,15 @@ editor.modal = {
         }
 
         if (!svgCanvas.setSvgString($('#svg_source_textarea').val())) {
-          $.confirm("There were parsing errors in your SVG source.\nRevert back to original SVG source?", function(ok) {
-            if(!ok) return false;
+          $.confirm("There were parsing errors in your SVG source.\nRevert back to original SVG source?", function (ok) {
+            if (!ok) return false;
             saveChanges();
           });
         } else {
           saveChanges();
-        } 
+        }
       })
-      el.querySelector("#tool_source_cancel").addEventListener("click", function(){
+      el.querySelector("#tool_source_cancel").addEventListener("click", function () {
         editor.modal.source.close();
       });
     }
@@ -59,9 +59,9 @@ editor.modal = {
         <button class="warning" data-i18n="modal.configure.erase_all_data">Erase all data</button>
         </div>
       </div>`,
-    js: function(el){
+    js: function (el) {
       const input = el.querySelector("#configuration button.warning");
-      input.addEventListener("click", function(){
+      input.addEventListener("click", function () {
         state.clean();
       })
     }
@@ -78,8 +78,60 @@ editor.modal = {
     html: `
       <h1 data-i18n="modal.shortcuts.name">Shortcuts</h1>
       <div id="shortcuts"></div>`,
-    js: function(el){
+    js: function (el) {
       el.children[0].classList.add("modal-item-wide");
     }
-  })
+  }),
+  // 
+  horizontal_rect: new MD.Modal({
+    html: `
+      <div class="m-rect-dialog">
+        <div class="m-rect-dialog__content">
+          <label for="rect_rows" data-i18n="modal.horizontal_rect.name"></label>
+          <textarea rows="1" type="text" class="u-input" id="rect_rows" data-i18n="[placeholder]modal.horizontal_rect.name" required name="rect_Rows" value="5"></textarea>
+        </div>
+        <div id="tool_horizontal_rect" class="toolbar_button">
+          <button id="horizontal_rect_cancel" class="cancel" data-i18n="modal.source.cancel">Cancel</button>
+          <button id="horizontal_rect_save" class="ok" data-i18n="modal.horizontal_rect.confirm">Confirm</button>
+        </div>
+      </div>`,
+    js: function (el) {
+      el.querySelector("#horizontal_rect_cancel").addEventListener("click", function () {
+        editor.modal.horizontal_rect.close();
+      });
+
+      el.querySelector("#horizontal_rect_save").addEventListener("click", function () {
+        // get the value jquery way
+        const rows = $("#rect_rows").val();
+
+        // 根据输入的行数，生成svg，
+        // 1. 生成一个矩形
+        // 2. 根据行数在矩形内画线
+        // 3. 保存svg
+        // 4. 关闭modal
+        // 5. 清空输入框
+
+        const canv = svgCanvas;
+        const cur_style = canv.getStyle();
+        const current_d = "M 10 10 H 90 V 90 H 10 Z"
+
+        const cur_shape = canv.addSvgElementFromJson({
+          "element": "path",
+          "curStyles": true,
+          "attr": {
+            "d": current_d,
+            "id": canv.getNextId(),
+            "opacity": cur_style.opacity / 2,
+            "style": "pointer-events:none"
+          }
+        });
+
+        console.log(cur_shape)
+
+        cur_shape.setAttribute("d", current_d);
+
+        canv.recalculateDimensions(cur_shape);
+      });
+    }
+  }),
 };

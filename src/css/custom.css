@@ -1,0 +1,19 @@
+.m-rect-dialog label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.m-rect-dialog .u-input {
+    resize: none;
+}
+
+#rect_rows {
+    height: calc(100% - 64px);
+    line-height: 140%;
+    font-family: var(--mono-font);
+    font-size: 14px;
+}
+
+.m-rect-dialog .tool_horizontal_rect {
+    margin-top: 10px;
+}
