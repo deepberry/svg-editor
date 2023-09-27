@@ -358,6 +358,12 @@ MD.Editor = function () {
     editor.modal.horizontal_rect.open();
   }
 
+  function vertical_rect() {
+    const textarea = editor.modal.vertical_rect.el.querySelector("textarea");
+    textarea.value = 5
+    editor.modal.vertical_rect.open();
+  }
+
   function loadFromUrl(url, cb) {
     if (!cb) cb = function () {/*noop*/ };
     $.ajax({
@@ -417,6 +423,7 @@ MD.Editor = function () {
   this.saveCanvas = saveCanvas;
   this.loadFromUrl = loadFromUrl;
   this.horizontal_rect = horizontal_rect;
+  this.vertical_rect = vertical_rect;
 
   this.export = function () {
     if (window.canvg) {

@@ -82,7 +82,7 @@ editor.modal = {
       el.children[0].classList.add("modal-item-wide");
     }
   }),
-  // 
+  // 横向矩形
   horizontal_rect: new MD.Modal({
     html: `
       <div class="m-rect-dialog">
@@ -112,25 +112,129 @@ editor.modal = {
         // 5. 清空输入框
 
         const canv = svgCanvas;
-        const cur_style = canv.getStyle();
-        const current_d = "M 10 10 H 90 V 90 H 10 Z"
 
-        const cur_shape = canv.addSvgElementFromJson({
-          "element": "path",
+        const group = canv.addSvgElementFromJson({
+          "element": "g",
           "curStyles": true,
           "attr": {
-            "d": current_d,
-            "id": canv.getNextId(),
-            "opacity": cur_style.opacity / 2,
             "style": "pointer-events:none"
           }
         });
 
-        console.log(cur_shape)
+        const cur_shape = canv.addSvgElementFromJson({
+          "element": "rect",
+          "curStyles": true,
+          "attr": {
+            "x": 20,
+            "y": 20,
+            "width": 150,
+            "height": 100,
+            "id": canv.getNextId(),
+            "style": "pointer-events:none"
+          }
+        });
 
-        cur_shape.setAttribute("d", current_d);
+        group.append(cur_shape);
 
-        canv.recalculateDimensions(cur_shape);
+        // 循环加入线条 rows表示行数
+        for(let i = 1; i <= rows; i++) {
+          // 计算间隔
+          const gap = 100 / (~~rows + 1);
+          // 画线
+          const line = canv.addSvgElementFromJson({
+            "element": "line",
+            "curStyles": true,
+            "attr": {
+              "x1": 20,
+              "y1": 20 + i * gap,
+              "x2": 170,
+              "y2": 20 + i * gap,
+              "id": canv.getNextId(),
+              "style": "pointer-events:none"
+            }
+          });
+          group.append(line);
+        }
+
+        canv.recalculateDimensions(group);
+      });
+    }
+  }),
+  // 纵向矩形
+  vertical_rect: new MD.Modal({
+    html: `
+      <div class="m-rect-dialog">
+        <div class="m-rect-dialog__content">
+          <label for="rect_rows_v" data-i18n="modal.horizontal_rect.name"></label>
+          <textarea rows="1" type="text" class="u-input" id="rect_rows_v" data-i18n="[placeholder]modal.horizontal_rect.name" required name="rect_rows_v" value="5"></textarea>
+        </div>
+        <div id="tool_vertical_rect" class="toolbar_button">
+          <button id="vertical_rect_cancel" class="cancel" data-i18n="modal.source.cancel">Cancel</button>
+          <button id="vertical_rect_save" class="ok" data-i18n="modal.horizontal_rect.confirm">Confirm</button>
+        </div>
+      </div>`,
+    js: function (el) {
+      el.querySelector("#vertical_rect_cancel").addEventListener("click", function () {
+        editor.modal.vertical_rect.close();
+      });
+
+      el.querySelector("#vertical_rect_save").addEventListener("click", function () {
+        // get the value jquery way
+        const rows = $("#rect_rows_v").val();
+
+        // 根据输入的行数，生成svg，
+        // 1. 生成一个矩形
+        // 2. 根据行数在矩形内画线
+        // 3. 保存svg
+        // 4. 关闭modal
+        // 5. 清空输入框
+
+        const canv = svgCanvas;
+
+        const group = canv.addSvgElementFromJson({
+          "element": "g",
+          "curStyles": true,
+          "attr": {
+            "style": "pointer-events:none"
+          }
+        });
+
+        const cur_shape = canv.addSvgElementFromJson({
+          "element": "rect",
+          "curStyles": true,
+          "attr": {
+            "x": 20,
+            "y": 20,
+            "width": 100,
+            "height": 150,
+            "id": canv.getNextId(),
+            "style": "pointer-events:none"
+          }
+        });
+
+        group.append(cur_shape);
+
+        // 循环加入线条 rows表示行数
+        for(let i = 1; i <= rows; i++) {
+          // 计算间隔
+          const gap = 100 / (~~rows + 1);
+          // 画线
+          const line = canv.addSvgElementFromJson({
+            "element": "line",
+            "curStyles": true,
+            "attr": {
+              "x1": 20 + i * gap,
+              "y1": 20,
+              "x2": 20 + i * gap,
+              "y2": 170,
+              "id": canv.getNextId(),
+              "style": "pointer-events:none"
+            }
+          });
+          group.append(line);
+        }
+
+        canv.recalculateDimensions(group);
       });
     }
   }),

@@ -61,10 +61,14 @@ MD.Shapelib = function(){
     },
     'common': {
       data: {
-        "horizontal_rect": "m1,1l49.66667,0l0,0l74.5,0l173.83334,0l0,115.8889l0,0l0,49.66666l0,33.11111l-173.83334,0l-123.68433,97.37498l49.18433,-97.37498l-49.66667,0l0,-33.11111l0,-49.66666l0,0z"
+        "horizontal_rect": "M 0 0 H 300 V 125 H 0 z",
+        "vertical_rect": "M 100 0 V 400 H 225 V 0 z",
       },
       buttons: [],
-
+      fnKeys: {
+        "horizontal_rect": "horizontal_rect",
+        "vertical_rect": "vertical_rect",
+      }
     }
   };
   
@@ -133,7 +137,7 @@ MD.Shapelib = function(){
       var icon_btn = icon.wrap('<div class="tool_button">').parent().attr({
         id: mode_id + '_' + id,
         title: id,
-        'data-action': "horizontal_rect"
+        'data-action': cur_lib.fnKeys[id] || null
       });
       
       // Store for later use
