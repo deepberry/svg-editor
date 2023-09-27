@@ -130,7 +130,9 @@ editor.modal = {
             "width": 150,
             "height": 100,
             "id": canv.getNextId(),
-            "style": "pointer-events:none"
+            "style": "pointer-events:none",
+            "stroke-width": "1",
+            "fill": "none"
           }
         });
 
@@ -150,13 +152,17 @@ editor.modal = {
               "x2": 170,
               "y2": 20 + i * gap,
               "id": canv.getNextId(),
-              "style": "pointer-events:none"
+              "style": "pointer-events:none",
+              "stroke-width": "1",
+              "fill": "none"
             }
           });
           group.append(line);
         }
 
         canv.recalculateDimensions(group);
+
+        editor.modal.horizontal_rect.close();
       });
     }
   }),
@@ -208,7 +214,9 @@ editor.modal = {
             "width": 100,
             "height": 150,
             "id": canv.getNextId(),
-            "style": "pointer-events:none"
+            "style": "pointer-events:none",
+            "stroke-width": "1",
+            "fill": "none"
           }
         });
 
@@ -228,13 +236,16 @@ editor.modal = {
               "x2": 20 + i * gap,
               "y2": 170,
               "id": canv.getNextId(),
-              "style": "pointer-events:none"
+              "style": "pointer-events:none",
+              "stroke-width": "1",
+              "fill": "none"
             }
           });
           group.append(line);
         }
 
         canv.recalculateDimensions(group);
+        editor.modal.vertical_rect.close();
       });
     }
   }),
