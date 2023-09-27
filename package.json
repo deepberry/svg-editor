@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "test",
-    "build": "cross-env NODE_ENV=production npx gulp",
+    "build": "npx gulp --gulpfile gulpfile.prod.js",
     "dev": "npx gulp",
     "py": "python -m http.server 8000"
   },

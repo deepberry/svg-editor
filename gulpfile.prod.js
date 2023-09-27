@@ -79,3 +79,5 @@ gulp.task('build',
       'i18n',
   )
 );
+
+gulp.task('default', gulp.series('build'));
