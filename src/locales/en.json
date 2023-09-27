@@ -125,6 +125,7 @@
     "menu": {
         "key_shortcuts": "Key Shortcuts",
         "configure": "Configure",
+        "clear": "Clear",
 
         "file": {
             "name": "File",

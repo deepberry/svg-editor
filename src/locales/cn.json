@@ -125,6 +125,7 @@
     "menu": {
         "key_shortcuts": "快捷键",
         "configure": "配置",
+        "clear": "清除",
 
         "file": {
             "name": "文件",
