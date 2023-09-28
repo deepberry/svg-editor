@@ -228,12 +228,18 @@
         "clear_alert": "Clears all editor configuration and canvas, are you sure?"
     },
     "editor": {
-        "clear_drawing_alert": "Do you want to clear the drawing?"
+        "clear_drawing_alert": "Do you want to clear the drawing?",
+        "clear_drawing_text": "This will also erase your undo history"
     },
 
     "shape": {
         "common": "Common",
         "basic": "Basic",
         "devices": "Devices"
+    },
+    "common": {
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "ok": "OK"
     }
 }

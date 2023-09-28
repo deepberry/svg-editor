@@ -13,10 +13,10 @@
       .toggleClass('prompt',(type==='prompt'));
     btn_holder.empty();
     
-    var ok = $('<input type="button" value="OK">').appendTo(btn_holder);
+    var ok = $(`<input type="button" value="${i18next.t('common.ok')}">`).appendTo(btn_holder);
   
     if(type != 'alert') {
-      $('<input type="button" class="cancel" value="Cancel">')
+      $(`<input type="button" class="cancel" value="${i18next.t('common.cancel')}">`)
         .appendTo(btn_holder)
         .on("click touchstart", function() { box.hide();callback(false)});
     }

@@ -228,12 +228,18 @@
         "clear_alert": "确认清除所有数据？"
     },
     "editor": {
-        "clear_drawing_alert": "确认清除所有数据？"
+        "clear_drawing_alert": "确认清除所有数据？",
+        "clear_drawing_text": "这也将删除您的撤消历史记录"
     },
 
     "shape": {
         "common": "地形",
         "basic": "形状",
         "devices": "设备"
+    },
+    "common": {
+        "cancel": "取消",
+        "confirm": "确认",
+        "ok": "确认"
     }
 }

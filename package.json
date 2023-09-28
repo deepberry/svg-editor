@@ -10,8 +10,7 @@
   "scripts": {
     "test": "test",
     "build": "npx gulp --gulpfile gulpfile.prod.js",
-    "dev": "npx gulp",
-    "py": "python -m http.server 8000"
+    "dev": "npx gulp"
   },
   "repository": {
     "type": "git",

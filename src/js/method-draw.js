@@ -700,7 +700,7 @@ window.methodDraw = function() {
     
     var clickClear = function(){
       var dims = curConfig.dimensions;
-      $.confirm("<strong>Do you want to clear the drawing?</strong>\nThis will also erase your undo history", function(ok) {
+      $.confirm(`<strong data-i18n='editor.clear_drawing_alert'>Do you want to clear the drawing?</strong>\nThis will also erase your undo history`, function(ok) {
         if(!ok) return;
         setSelectMode();
         svgCanvas.deleteSelectedElements();
