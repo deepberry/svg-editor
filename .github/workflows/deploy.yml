@@ -23,4 +23,4 @@ jobs:
                   username: ${{ secrets.PREVIEW_HOST_USERNAME }}
                   key: ${{ secrets.PREVIEW_HOST_PRIVATEKEY }}
                   source: svg-editor/
-                  target: /www/wwwroot/fe/svg-editor/
+                  target: /www/wwwroot/fe/
