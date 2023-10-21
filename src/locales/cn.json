@@ -241,5 +241,10 @@
         "cancel": "取消",
         "confirm": "确认",
         "ok": "确认"
+    },
+
+    "actions": {
+        "save": "保存",
+        "auto_save": "自动保存"
     }
 }

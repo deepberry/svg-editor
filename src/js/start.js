@@ -33,25 +33,30 @@ const eyedropper = svgCanvas.addExtension.apply(this, ["eyedropper", MD.Eyedropp
 state.set("canvasId", t("Untitled"));
 state.set("canvasMode", state.get("canvasMode"));
 
-// load from param
-if (!window.location.search.includes("?load=")) {
-  svgCanvas.setSvgString(state.get("canvasContent"));
-}
-else {
-  
-  const error = function(err) {
-      console.log(err);
-      svgCanvas.setSvgString(state.get("canvasContent"));
+// set token & dashboard_id
+const token = utils.findGetParameter("__token");
+const dashboard_id = utils.findGetParameter("__dashboard_id");
+
+if (token) {
+  sessionStorage.setItem("token", token);
+  sessionStorage.setItem("dashboard_id", dashboard_id);
+
+  const headers = {
+    "Authorization": `Bearer ${token}`,
+    "Content-Type": "application/json",
   }
 
-  const url = utils.findGetParameter("load");
-  fetch(url)
-    .then(r => r.text())
-    .then(text => {
-      if (text.includes("Error response")) return error("Error response");
-      svgCanvas.setSvgString(text);
-    })
-    .catch(error);
+  fetch("http://localhost:10090/api/titan/dashboard/map/" + dashboard_id, {
+    method: "GET",
+    headers: headers,
+  }).then(r => r.json()).then(r => {
+    if (r.code == 0) {
+      const data = r.data;
+      const svg = data.svg;
+      const svgString = decodeURIComponent(svg);
+      svgCanvas.setSvgString(svgString);
+    }
+  })
 }
 
 state.set("canvasTitle", svgCanvas.getDocumentTitle());

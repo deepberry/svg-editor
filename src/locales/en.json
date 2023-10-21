@@ -241,5 +241,10 @@
         "cancel": "Cancel",
         "confirm": "Confirm",
         "ok": "OK"
+    },
+
+    "actions": {
+        "save": "Save",
+        "auto_save": "Auto Save"
     }
 }

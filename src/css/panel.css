@@ -42,3 +42,19 @@
 #tool_text_on_path {
   display: none !important;
 }
+
+.m-actions {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.m-actions .u-save-label {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
