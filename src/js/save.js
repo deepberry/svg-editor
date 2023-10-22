@@ -3,6 +3,21 @@
  * @license MIT
  */
 
+
+/**
+ * 初始化自动保存的状态
+ */
+const auto_save = localStorage.getItem("auto_save");
+if (auto_save == "true") {
+    $("#auto_save").attr("checked", "checked");
+
+    // 初始化定时器，触发间隔30s
+    const timer = setInterval(() => {
+        $("#save_svg").click()
+    }, 30000);
+    sessionStorage.setItem("timer", timer);
+}
+
 $("#save_svg").click(function () {
     const token = sessionStorage.getItem("token");
     const dashboard_id = sessionStorage.getItem("dashboard_id");
@@ -17,20 +32,41 @@ $("#save_svg").click(function () {
         "dashboard_id": dashboard_id,
     }
 
-    console.log(body)
-    
-    fetch("http://localhost:10090/api/titan/dashboard/map", {
+    this.disabled = true;
+    this.innerText = "保存中...";
+
+    fetch("https://api.deepberry.cn/api/titan/dashboard/map", {
         method: "POST",
         headers: headers,
         body: JSON.stringify(body),
     }).then(r => r.json()).then(r => {
-        console.log(r.code)
         if (r.code == 0) {
-            alert("保存成功")
-
-            // postMessage to other window
-            // const win = window.opener;
-
+            this.innerText = "保存成功";
+            // 传递消息给另一个标签页 http://localhost:3800/overview/park/287
+            const target = window.opener;
+            target && target.postMessage("refresh", "*");
+            
+            setTimeout(() => {
+                this.disabled = false;
+                this.innerText = "保存";
+            }, 2000);
         }
     })
+});
+
+$("#auto_save").click(function (e) {
+    // input的值如果是true，那么初始化定时器，触发间隔30s
+    if (this.checked) {
+        const timer = setInterval(() => {
+            $("#save_svg").click()
+        }, 30000);
+        sessionStorage.setItem("timer", timer);
+    } else {
+        // input的值如果是false，那么清除定时器
+        const timer = sessionStorage.getItem("timer");
+        clearInterval(timer);
+        sessionStorage.removeItem("timer");
+    }
+
+    localStorage.setItem("auto_save", this.checked);
 });

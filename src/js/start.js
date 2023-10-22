@@ -46,7 +46,7 @@ if (token) {
     "Content-Type": "application/json",
   }
 
-  fetch("http://localhost:10090/api/titan/dashboard/map/" + dashboard_id, {
+  fetch("https://api.deepberry.cn/api/titan/dashboard/map/" + dashboard_id, {
     method: "GET",
     headers: headers,
   }).then(r => r.json()).then(r => {
@@ -57,6 +57,8 @@ if (token) {
       svgCanvas.setSvgString(svgString);
     }
   })
+} else {
+  svgCanvas.setSvgString(state.get("canvasContent"));
 }
 
 state.set("canvasTitle", svgCanvas.getDocumentTitle());
