@@ -32,5 +32,5 @@ jobs:
                   host: ${{ secrets.PREVIEW_HOST }}
                   username: ${{ secrets.PREVIEW_HOST_USERNAME }}
                   key: ${{ secrets.PREVIEW_HOST_PRIVATEKEY }}
-                  source: dist/*
-                  target: /www/wwwroot/titan_gray/
+                  source: svg-editor/
+                  target: /www/wwwroot/fe/
