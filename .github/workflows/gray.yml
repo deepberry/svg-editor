@@ -29,8 +29,8 @@ jobs:
             - name: GrayEnv
               uses: appleboy/scp-action@v0.1.4
               with:
-                  host: ${{ secrets.PREVIEW_HOST }}
-                  username: ${{ secrets.PREVIEW_HOST_USERNAME }}
-                  key: ${{ secrets.PREVIEW_HOST_PRIVATEKEY }}
+                  host: ${{ secrets.GRAY_HOST }}
+                  username: ${{ secrets.GRAY_HOST_USERNAME }}
+                  key: ${{ secrets.GRAY_HOST_PRIVATEKEY }}
                   source: svg-editor/
                   target: /www/wwwroot/fe/
