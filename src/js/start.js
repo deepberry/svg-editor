@@ -50,22 +50,24 @@ if (token) {
     method: "GET",
     headers: headers,
   }).then(r => r.json()).then(r => {
-    if (r.code == 0) {
+    if (r.code == 0 && r.data && r.data.svg) {
       const data = r.data;
       const svg = data.svg;
       const svgString = decodeURIComponent(svg);
       svgCanvas.setSvgString(svgString);
+    } else {
+      // svgCanvas.clear();
+      svgCanvas.setSvgString(state.get("canvasContent"));
     }
   })
 } else {
+  if (sessionStorage.getItem('dashboard_id') != dashboard_id) {
+    svgCanvas.clear();
+  }
   svgCanvas.setSvgString(state.get("canvasContent"));
 }
 
 state.set("canvasTitle", svgCanvas.getDocumentTitle());
-
-//editor.paintBox.fill.setPaint(state.get("canvasFill"));
-//editor.paintBox.stroke.setPaint(state.get("canvasStroke"));
-//editor.paintBox.canvas.setPaint(state.get("canvasBackground"));
 
 document.body.classList.remove("loading");
 document.getElementById("svgcanvas").removeAttribute("title");
