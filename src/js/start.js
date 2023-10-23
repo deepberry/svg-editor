@@ -1,4 +1,9 @@
-var API = getEnv() == 'preview' ? "https://gray.api.deepberry.cn" : "https://api.deepberry.cn"
+var env = getEnv();
+var API = {
+  'preview': 'https://gray.api.deepberry.cn',
+  'build': 'https://api.deepberry.cn',
+  'undefined': "http://localhost:10090"
+}[env]
 
 editor.keyboard = new MD.Keyboard();
 editor.menu = new MD.Menu();
@@ -31,6 +36,7 @@ svgCanvas.bind("contextset", editor.contextChanged);
 svgCanvas.bind("extension_added", editor.extensionAdded);
 svgCanvas.textActions.setInputElem($("#text")[0]);
 const shapeLib = svgCanvas.addExtension.apply(this, ["shapes", MD.Shapelib]);
+const deviceLib = svgCanvas.addExtension.apply(this, ["devices", MD.Devicelib]);
 const eyedropper = svgCanvas.addExtension.apply(this, ["eyedropper", MD.Eyedropper]);
 state.set("canvasId", t("Untitled"));
 state.set("canvasMode", state.get("canvasMode"));
@@ -48,7 +54,7 @@ if (token) {
     "Content-Type": "application/json",
   }
 
-  fetch(`${API}/api/titan/dashboard/map/` + dashboard_id, {
+  fetch(`${API}/api/titan/overview/dashboard/map/` + dashboard_id, {
     method: "GET",
     headers: headers,
   }).then(r => r.json()).then(r => {
@@ -61,6 +67,9 @@ if (token) {
       // svgCanvas.clear();
       svgCanvas.setSvgString(state.get("canvasContent"));
     }
+  }).catch(e => {
+    svgCanvas.clear();
+    svgCanvas.setSvgString(state.get("canvasContent"));
   })
 } else {
   if (sessionStorage.getItem('dashboard_id') != dashboard_id) {

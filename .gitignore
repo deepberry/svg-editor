@@ -4,3 +4,4 @@ dist/*
 *.sh
 .vscode
 svg-editor/*
+src/js/env.js

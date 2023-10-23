@@ -531,12 +531,24 @@ window.methodDraw = function() {
     }
 
     var clickShapelib = function() {
+      console.log(22)
       if (toolButtonClick('#tool_shapelib')) {
         $("#tools_shapelib").css({
           "top": $('#tool_shapelib').offset().top,
           "margin-left": 3,
         })
         $("#tools_shapelib").show();
+      }
+    }
+
+    var clickDevicelib = function (){
+      console.log(11)
+      if (toolButtonClick('#tool_device')) {
+        $("#tools_shapelib").css({
+          "top": $('#tool_device').offset().top,
+          "margin-left": 3,
+        })
+        $("#tools_device").show();
       }
     }
 
@@ -1448,6 +1460,7 @@ window.methodDraw = function() {
         {sel:'#tool_ellipse', fn: clickEllipse, evt: 'mouseup', key: ['C', true]},
         {sel:'#tool_eyedropper', fn: clickEyedropper, evt: 'click', key: ['I', true]},
         {sel:'#tool_shapelib', fn: clickShapelib, evt: 'click', key: ['S', true]},
+        {sel:'#tool_device', fn: clickDevicelib, evt: 'click'},
         {sel:'#tool_path', fn: clickPath, evt: 'click', key: ['P', true]},
         {sel:'#tool_text', fn: clickText, evt: 'click', key: ['T', true]},
         {sel:'#tool_zoom', fn: clickZoom, evt: 'mouseup', key: ['Z', true]},

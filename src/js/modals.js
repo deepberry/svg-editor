@@ -112,6 +112,7 @@ editor.modal = {
         // 5. 清空输入框
 
         const canv = svgCanvas;
+        const width = 210,height=140;
 
         const group = canv.addSvgElementFromJson({
           "element": "g",
@@ -127,8 +128,8 @@ editor.modal = {
           "attr": {
             "x": 20,
             "y": 20,
-            "width": 150,
-            "height": 100,
+            "width": width,
+            "height": height,
             "id": canv.getNextId(),
             "style": "pointer-events:none",
             "stroke-width": "1",
@@ -141,7 +142,7 @@ editor.modal = {
         // 循环加入线条 rows表示行数
         for(let i = 1; i <= rows; i++) {
           // 计算间隔
-          const gap = 100 / (~~rows + 1);
+          const gap = height / (~~rows + 1);
           // 画线
           const line = canv.addSvgElementFromJson({
             "element": "line",
@@ -149,7 +150,7 @@ editor.modal = {
             "attr": {
               "x1": 20,
               "y1": 20 + i * gap,
-              "x2": 170,
+              "x2": width + 20,
               "y2": 20 + i * gap,
               "id": canv.getNextId(),
               "style": "pointer-events:none",
@@ -196,6 +197,7 @@ editor.modal = {
         // 5. 清空输入框
 
         const canv = svgCanvas;
+        const width=140,height=210;
 
         const group = canv.addSvgElementFromJson({
           "element": "g",
@@ -211,8 +213,8 @@ editor.modal = {
           "attr": {
             "x": 20,
             "y": 20,
-            "width": 100,
-            "height": 150,
+            "width": width,
+            "height": height,
             "id": canv.getNextId(),
             "style": "pointer-events:none",
             "stroke-width": "1",
@@ -225,7 +227,7 @@ editor.modal = {
         // 循环加入线条 rows表示行数
         for(let i = 1; i <= rows; i++) {
           // 计算间隔
-          const gap = 100 / (~~rows + 1);
+          const gap = width / (~~rows + 1);
           // 画线
           const line = canv.addSvgElementFromJson({
             "element": "line",
@@ -234,7 +236,7 @@ editor.modal = {
               "x1": 20 + i * gap,
               "y1": 20,
               "x2": 20 + i * gap,
-              "y2": 170,
+              "y2": height+20,
               "id": canv.getNextId(),
               "style": "pointer-events:none",
               "stroke-width": "1",

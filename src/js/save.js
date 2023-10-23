@@ -34,7 +34,7 @@ $("#save_svg").click(function () {
     this.disabled = true;
     this.innerText = "保存中...";
 
-    fetch(`${API}/api/titan/dashboard/map`, {
+    fetch(`${API}/api/titan/overview/dashboard/map`, {
         method: "POST",
         headers: headers,
         body: JSON.stringify(body),

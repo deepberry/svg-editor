@@ -634,11 +634,11 @@
                 </div>
 
                 <div id="action_panel" class="m-actions">
-                  <button id="save_svg" data-i18n="actions.save"></button>
-                  <span class="u-save-label">
-                    <input type="checkbox" id="auto_save" />
-                    <label for="auto_save" data-i18n="actions.auto_save"></label>
-                  </span>
+                    <button id="save_svg" data-i18n="actions.save"></button>
+                    <span class="u-save-label">
+                        <input type="checkbox" id="auto_save" />
+                        <label for="auto_save" data-i18n="actions.auto_save"></label>
+                    </span>
                 </div>
             </div>
             <!-- tools_top -->
@@ -653,6 +653,15 @@
                 <div class="tool_button" id="tool_shapelib" data-mode="shapelib" title="Shape Tool [s]" data-i18n="[title]tools.shape_tool">
                     <svg xmlns="http://www.w3.org/2000/svg" height="27" width="27" viewBox="0 0 24 24">
                         <polygon points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10" />
+                    </svg>
+                    <div class="tool_menu"></div>
+                </div>
+                <div class="tool_button" id="tool_device" data-mode="device" title="Device [s]" data-i18n="[title]tools.device">
+                    <?xml version="1.0" encoding="UTF-8"?><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 43H43V5H14V15" stroke="#333" stroke-width="4" stroke-linejoin="round" />
+                        <path d="M5 15H23V43H5L5 15Z" fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round" />
+                        <path d="M13 37H15" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M28 37H30" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <div class="tool_menu"></div>
                 </div>
@@ -818,6 +827,9 @@
         <div class="tools_flyout inverted-undo" id="tools_shapelib">
             <div id="shape_buttons"></div>
         </div>
+        <div class="tools_flyout inverted-undo" id="tools_device">
+            <div id="device_buttons"></div>
+        </div>
         <!-- build:js loading.js -->
         <script type="text/javascript" src="js/loading.js"></script>
         <!-- endbuild -->
@@ -869,6 +881,7 @@
         <script type="text/javascript" src="js/Darkmode.js"></script>
         <script type="text/javascript" src="js/ContextMenu.js"></script>
         <script type="text/javascript" src="js/Shapelib.js"></script>
+        <script type="text/javascript" src="js/Devicelib.js"></script>
         <script type="text/javascript" src="js/fonts.js"></script>
         <script type="text/javascript" src="js/dialog.js"></script>
         <script type="text/javascript" src="js/lib/contextmenu.js"></script>
