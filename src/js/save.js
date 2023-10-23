@@ -3,7 +3,6 @@
  * @license MIT
  */
 
-
 /**
  * 初始化自动保存的状态
  */
@@ -35,7 +34,7 @@ $("#save_svg").click(function () {
     this.disabled = true;
     this.innerText = "保存中...";
 
-    fetch("https://api.deepberry.cn/api/titan/dashboard/map", {
+    fetch(`${API}/api/titan/dashboard/map`, {
         method: "POST",
         headers: headers,
         body: JSON.stringify(body),

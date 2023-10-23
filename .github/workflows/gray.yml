@@ -1,0 +1,36 @@
+name: Gray
+on:
+    push:
+        branches:
+            - dev
+jobs:
+    build-and-preview:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+                  always-auth: true
+                  node-version: "16.x"
+                  registry-url: https://npm.pkg.github.com
+                  scope: "@deepberry"
+
+            - name: Install dependencies
+              run: npm install
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+            - name: Build
+              run: npm run preview
+
+            - name: GrayEnv
+              uses: appleboy/scp-action@v0.1.4
+              with:
+                  host: ${{ secrets.PREVIEW_HOST }}
+                  username: ${{ secrets.PREVIEW_HOST_USERNAME }}
+                  key: ${{ secrets.PREVIEW_HOST_PRIVATEKEY }}
+                  source: dist/*
+                  target: /www/wwwroot/titan_gray/

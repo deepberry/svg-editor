@@ -4,6 +4,16 @@ const useref = require('gulp-useref');
 const replace = require('gulp-replace');
 const cachebust = require('gulp-cache-bust');
 const minify = require('gulp-minify');
+const fs = require('fs');
+
+function setEnv(){
+    const env = process.env.ENV
+    fs.writeFileSync("./src/js/env.js", `function getEnv() { return '${env}' };`, function (err){
+        console.log("error", err)
+    });
+}
+
+setEnv()
 
 gulp.task('css', function () {
   return gulp.src('src/css/*.css')

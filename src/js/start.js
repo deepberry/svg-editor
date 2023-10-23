@@ -1,3 +1,5 @@
+var API = getEnv() == 'preview' ? "https://gray.api.deepberry.cn" : "https://api.deepberry.cn"
+
 editor.keyboard = new MD.Keyboard();
 editor.menu = new MD.Menu();
 editor.toolbar = new MD.Toolbar();
@@ -46,7 +48,7 @@ if (token) {
     "Content-Type": "application/json",
   }
 
-  fetch("https://api.deepberry.cn/api/titan/dashboard/map/" + dashboard_id, {
+  fetch(`${API}/api/titan/dashboard/map/` + dashboard_id, {
     method: "GET",
     headers: headers,
   }).then(r => r.json()).then(r => {
