@@ -583,7 +583,7 @@ svgedit.utilities.getRotationAngle = function(elem, to_rad) {
 if (svgedit.browser.supportsSelectors()) {
   svgedit.utilities.getElem = function(id) {
     // querySelector lookup
-    return svgroot_.querySelector('#'+id);
+    return svgroot_.getElementById(`${id}`);
   };
 } else if (svgedit.browser.supportsXpath()) {
   svgedit.utilities.getElem = function(id) {
