@@ -99,7 +99,7 @@ var clearSvgContentElement = canvas.clearSvgContentElement = function() {
 clearSvgContentElement();
 
 // Prefix string for element IDs
-var idprefix = "svg_";
+var idprefix = "";
 
 // Function: setIdPrefix
 // Changes the ID prefix to the given value
