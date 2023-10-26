@@ -29,7 +29,7 @@ MD.Devicelib = function(){
     var cur_lib = library.basic;
     current_d = cur_lib.data.power;
   
-    var mode_id = 'shapelib';
+    var mode_id = 'devicelib';
     
     function loadIcons() {
       $('#device_buttons').empty();

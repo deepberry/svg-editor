@@ -39,7 +39,8 @@ const shapeLib = svgCanvas.addExtension.apply(this, ["shapes", MD.Shapelib]);
 const deviceLib = svgCanvas.addExtension.apply(this, ["devices", MD.Devicelib]);
 const eyedropper = svgCanvas.addExtension.apply(this, ["eyedropper", MD.Eyedropper]);
 state.set("canvasId", t("Untitled"));
-state.set("canvasMode", state.get("canvasMode"));
+state.set("canvasMode", "select");
+// state.set("canvasMode", state.get("canvasMode"));
 
 // set token & dashboard_id
 const token = utils.findGetParameter("__token");

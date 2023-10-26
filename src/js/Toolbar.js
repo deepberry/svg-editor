@@ -5,6 +5,7 @@ MD.Toolbar = function(){
     const mode = this.getAttribute("data-mode");
     state.set("canvasMode", mode)
     if (mode === "shapelib") showShapeLib()
+    if (mode === "device") showDeviceLib()
   });
 
   function setMode(mode) {
@@ -15,7 +16,13 @@ MD.Toolbar = function(){
   }
 
   function showShapeLib(){
+    $("#tools_device").hide();
     $("#tools_shapelib").show();
+  }
+
+  function showDeviceLib(){
+    $("#tools_shapelib").hide();
+    $("#tools_device").show();
   }
 
   this.setMode = setMode;

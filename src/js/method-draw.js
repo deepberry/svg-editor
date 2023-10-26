@@ -531,7 +531,6 @@ window.methodDraw = function() {
     }
 
     var clickShapelib = function() {
-      console.log(22)
       if (toolButtonClick('#tool_shapelib')) {
         $("#tools_shapelib").css({
           "top": $('#tool_shapelib').offset().top,
@@ -542,7 +541,6 @@ window.methodDraw = function() {
     }
 
     var clickDevicelib = function (){
-      console.log(11)
       if (toolButtonClick('#tool_device')) {
         $("#tools_shapelib").css({
           "top": $('#tool_device').offset().top,

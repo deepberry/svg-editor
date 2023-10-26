@@ -5,8 +5,6 @@ MD.Canvas = function(){
 
   workarea.addEventListener("mouseup", function(){
     const mode = svgCanvas.getMode();
-    // todo why?
-    //if (mode !== "textedit" && mode !== "pathedit") state.set("canvasMode", mode);
     workarea.className = mode;
   })
 

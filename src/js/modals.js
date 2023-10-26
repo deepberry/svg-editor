@@ -112,7 +112,7 @@ editor.modal = {
         // 5. 清空输入框
 
         const canv = svgCanvas;
-        const width = 210,height=140;
+        const width = 300,height=200;
 
         const group = canv.addSvgElementFromJson({
           "element": "g",
@@ -164,6 +164,9 @@ editor.modal = {
         canv.recalculateDimensions(group);
 
         editor.modal.horizontal_rect.close();
+
+        // 切换至选择模式
+        $("#tool_select").click();
       });
     }
   }),
@@ -197,7 +200,7 @@ editor.modal = {
         // 5. 清空输入框
 
         const canv = svgCanvas;
-        const width=140,height=210;
+        const width=200,height=300;
 
         const group = canv.addSvgElementFromJson({
           "element": "g",
@@ -248,6 +251,9 @@ editor.modal = {
 
         canv.recalculateDimensions(group);
         editor.modal.vertical_rect.close();
+
+        // 切换至选择模式
+        $("#tool_select").click();
       });
     }
   }),
