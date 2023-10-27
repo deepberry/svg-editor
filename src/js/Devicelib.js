@@ -8,8 +8,8 @@ MD.Devicelib = function(){
   
     // 关闭dialog
     $(document).on("mousedown", function(e){
-      if (!e.target.closest("#tool_device"))
-        $("#tool_device").hide();
+      if (!e.target.closest("#tools_device"))
+        $("#tools_device").hide();
     })
     
     // This populates the category list
@@ -109,7 +109,7 @@ MD.Devicelib = function(){
         
         var shower = $('#tool_device');
   
-        loadLibrary('common');
+        loadLibrary('devices');
         
         // Do mouseup on parent element rather than each button
         $('#device_buttons').mouseup(function(evt) {

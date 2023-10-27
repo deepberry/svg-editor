@@ -3,5 +3,5 @@ dist/*
 .DS_Store
 *.sh
 .vscode
-svg-editor/*
+svg-editor
 src/js/env.js
