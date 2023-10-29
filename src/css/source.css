@@ -38,8 +38,11 @@
   position: absolute;
   display: flex;
   justify-content: space-between;
-  bottom: 0;
+  bottom: 1px;
   left: 0;
   right: 0;
   padding: var(--x2) var(--x2);
+  background-color: #fff;
+  border-bottom-left-radius: var(--x2);
+  border-bottom-right-radius: var(--x2);
 }

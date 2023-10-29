@@ -50,6 +50,11 @@ $("#save_svg").click(function () {
                 this.innerText = "保存";
             }, 2000);
         }
+    }).finally(() => {
+        setTimeout(() => {
+            this.disabled = false;
+            this.innerText = "保存";
+        }, 2000);
     })
 });
 

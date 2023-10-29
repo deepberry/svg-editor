@@ -196,7 +196,8 @@ MD.Shapelib = function(){
           "d": current_d,
           "id": canv.getNextId(),
           "opacity": cur_style.opacity / 2,
-          "style": "pointer-events:none"
+          "style": "pointer-events:none",
+          "class": `db-shape db-shape-${cur_shape_id}`
         }
       });
       cur_shape.setAttribute("d", current_d);

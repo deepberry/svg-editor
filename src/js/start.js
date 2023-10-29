@@ -63,6 +63,7 @@ if (token) {
       const data = r.data;
       const svg = data.svg;
       const svgString = decodeURIComponent(svg);
+      // console.log("svgString", svgString);
       svgCanvas.setSvgString(svgString);
     } else {
       // svgCanvas.clear();
